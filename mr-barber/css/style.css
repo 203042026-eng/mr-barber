@@ -1,0 +1,926 @@
+/* =====================================================
+   MR BARBER - CSS DO SITE PUBLICO
+   Cores medidas diretamente dos wireframes da Sprint 2
+   ===================================================== */
+
+:root {
+    --escuro: #1c1c1e;        /* cabecalho, rodape, botoes pretos */
+    --banner: #3a3a3d;        /* faixa de titulo / banner */
+    --dourado: #b8913a;       /* destaques e botoes principais */
+    --bege: #f3e9d0;          /* tags, aviso, chamada para acao */
+    --cinza-claro: #f1f1f1;   /* fundos de secao */
+    --borda: #d6d6d6;
+    --texto: #1c1c1e;
+    --texto-suave: #4a4a4a;
+    --cinza: #9a9a9a;
+    --branco: #ffffff;
+    --verde: #2e7d32;
+    --vermelho: #b03a2e;
+    --rosa: #fbeaea;
+    --rosa-borda: #d9a3a3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+/* ===== BOTOES ===== */
+.botao-primario,
+.botao-secundario,
+.botao-escuro {
+    display: inline-block;
+    padding: 11px 26px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: opacity 0.2s;
+}
+
+.botao-primario {
+    background-color: var(--dourado);
+    border-color: var(--dourado);
+    color: var(--branco);
+}
+
+.botao-secundario {
+    background-color: transparent;
+    border-color: var(--dourado);
+    color: var(--dourado);
+}
+
+.botao-escuro {
+    background-color: var(--escuro);
+    border-color: var(--escuro);
+    color: var(--branco);
+}
+
+.botao-primario:hover,
+.botao-escuro:hover {
+    opacity: 0.85;
+}
+
+.botao-secundario:hover {
+    background-color: var(--dourado);
+    color: var(--branco);
+}
+
+/* ===== CABECALHO ===== */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 58px;
+    background-color: var(--escuro);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--branco);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.logo-simbolo {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--dourado);
+}
+
+.topo nav {
+    display: flex;
+    gap: 26px;
+}
+
+.topo nav a {
+    color: var(--branco);
+    font-size: 0.8rem;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.topo nav a:hover,
+.topo nav a.ativo {
+    color: var(--dourado);
+}
+
+.topo nav a.ativo {
+    border-bottom-color: var(--dourado);
+}
+
+/* ===== FAIXA DE TITULO DAS PAGINAS ===== */
+.titulo-pagina {
+    background-color: var(--banner);
+    text-align: center;
+    padding: 28px 20px 24px;
+}
+
+.titulo-pagina h1 {
+    color: var(--branco);
+    font-size: 1.7rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.titulo-pagina h1::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 2px;
+    background-color: var(--dourado);
+    margin: 8px auto 0;
+}
+
+.titulo-pagina p {
+    color: #c9c9c9;
+    font-size: 0.78rem;
+    margin-top: 8px;
+}
+
+/* ===== HOME: BANNER ===== */
+.banner {
+    background-color: var(--banner);
+    text-align: center;
+    padding: 70px 20px 62px;
+}
+
+.banner h1 {
+    color: var(--branco);
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.banner h1 span {
+    color: var(--dourado);
+}
+
+.banner-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 32px;
+}
+
+.banner-botoes a {
+    min-width: 150px;
+}
+
+/* ===== HOME: DESTAQUES ===== */
+.destaques {
+    padding: 36px 40px 34px;
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.destaques h2 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.destaques h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--dourado);
+    margin: 6px auto 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 26px;
+    text-align: left;
+}
+
+.ver-catalogo {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--dourado);
+    font-size: 0.78rem;
+    font-weight: bold;
+}
+
+.ver-catalogo:hover {
+    text-decoration: underline;
+}
+
+/* ===== CARD DE SERVICO (home e catalogo) ===== */
+.card-servico {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    padding: 16px 18px;
+    min-height: 150px;
+}
+
+.card-servico h3 {
+    font-size: 0.9rem;
+}
+
+.card-servico p {
+    margin-top: 8px;
+    color: var(--cinza);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.preco {
+    color: var(--dourado);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.card-rodape .botao-escuro {
+    padding: 7px 24px;
+    font-size: 0.72rem;
+    border-width: 1px;
+}
+
+.categoria-tag {
+    align-self: flex-start;
+    background-color: var(--bege);
+    color: #7a7a7a;
+    font-size: 0.65rem;
+    padding: 2px 10px;
+    margin-bottom: 10px;
+}
+
+/* ===== HOME: SOBRE ===== */
+.sobre {
+    background-color: var(--cinza-claro);
+    padding: 12px 40px;
+}
+
+.sobre-interno {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 28px;
+    align-items: start;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.sobre-foto {
+    border: 1px solid #8a8a8a;
+    background-color: var(--cinza-claro);
+    height: 190px;
+    overflow: hidden;
+}
+
+.sobre-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre-texto h2 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.sobre-texto p {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.sobre-texto .botao-primario {
+    padding: 8px 22px;
+    font-size: 0.72rem;
+}
+
+/* ===== HOME: CHAMADA PARA ACAO ===== */
+.cta-contato {
+    background-color: var(--bege);
+    padding: 20px 40px;
+}
+
+.cta-interno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.cta-contato p {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.cta-contato .botao-primario {
+    padding: 9px 40px;
+    font-size: 0.72rem;
+}
+
+/* ===== RODAPE ===== */
+.rodape {
+    background-color: var(--escuro);
+    color: var(--branco);
+    padding: 22px 40px 14px;
+}
+
+.rodape-interno {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.rodape strong {
+    color: var(--dourado);
+    font-size: 0.85rem;
+}
+
+.rodape .slogan {
+    margin-top: 4px;
+    font-size: 0.68rem;
+    font-style: italic;
+    color: #c9c9c9;
+}
+
+.rodape .rodape-info {
+    font-size: 0.78rem;
+}
+
+.rodape .copyright {
+    display: block;
+    margin-top: 14px;
+    text-align: right;
+    font-size: 0.65rem;
+    color: var(--cinza);
+}
+
+/* ===== SERVICOS: FILTROS E BUSCA ===== */
+.barra-catalogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px 40px 0;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtros a {
+    border: 1px solid var(--escuro);
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 0.75rem;
+    background-color: var(--branco);
+}
+
+.filtros a:hover {
+    background-color: var(--cinza-claro);
+}
+
+.filtros a.ativo {
+    background-color: var(--escuro);
+    color: var(--branco);
+    font-weight: bold;
+}
+
+.busca input {
+    width: 250px;
+}
+
+.grade-servicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 22px 40px 10px;
+}
+
+.grade-servicos .card-servico {
+    min-height: 178px;
+}
+
+.vazio {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--cinza);
+    padding: 40px 0;
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px 30px;
+    font-size: 0.8rem;
+}
+
+.paginacao a {
+    color: var(--texto-suave);
+}
+
+.paginacao a:hover {
+    color: var(--dourado);
+}
+
+.paginacao .atual {
+    font-weight: bold;
+    color: var(--escuro);
+}
+
+/* ===== FORMULARIOS ===== */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.78rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+    padding: 9px 12px;
+    background-color: var(--branco);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: inherit;
+}
+
+::placeholder {
+    color: var(--cinza);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--dourado);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.erro {
+    display: none;
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: var(--vermelho);
+}
+
+.erro.visivel {
+    display: block;
+}
+
+.alerta {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 0.82rem;
+}
+
+.alerta-erro {
+    background-color: var(--rosa);
+    border: 1px solid var(--rosa-borda);
+    color: var(--vermelho);
+}
+
+.alerta-ok {
+    background-color: #dcefe0;
+    border: 1px solid #a8d3b2;
+    color: var(--verde);
+}
+
+.alerta ul {
+    list-style: none;
+}
+
+/* ===== AGENDAR ===== */
+.agendar-layout {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 26px;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 40px 40px;
+}
+
+.agendar-form h2 {
+    font-size: 0.85rem;
+    margin: 4px 0 12px;
+}
+
+.linha-data {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.linha-data input {
+    width: 190px;
+    flex: none;
+}
+
+.dica {
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--cinza);
+}
+
+.horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.horario {
+    padding: 9px 0;
+    text-align: center;
+    background-color: var(--branco);
+    color: var(--escuro);
+    border: 1px solid var(--escuro);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.horario:hover {
+    background-color: var(--cinza-claro);
+}
+
+.horario.selecionado {
+    background-color: var(--dourado);
+    border-color: var(--dourado);
+    color: var(--branco);
+}
+
+.horario.ocupado {
+    background-color: var(--borda);
+    border-color: var(--borda);
+    color: var(--cinza);
+    font-weight: normal;
+    cursor: not-allowed;
+}
+
+.legenda {
+    display: flex;
+    gap: 22px;
+    margin-top: 14px;
+    font-size: 0.72rem;
+    color: var(--texto-suave);
+}
+
+.legenda span::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    border: 1px solid var(--escuro);
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.legenda .l-ocupado::before {
+    background-color: var(--borda);
+    border-color: var(--borda);
+}
+
+.legenda .l-selecionado::before {
+    background-color: var(--dourado);
+    border-color: var(--dourado);
+}
+
+.agendar-form .botao-primario {
+    width: 100%;
+    padding: 13px;
+    text-transform: uppercase;
+}
+
+.resumo {
+    border: 1px solid var(--borda);
+    padding: 18px 20px;
+}
+
+.resumo h3 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--borda);
+    margin-bottom: 6px;
+}
+
+.resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--borda);
+    font-size: 0.78rem;
+}
+
+.resumo-linha:last-of-type {
+    border-bottom: none;
+}
+
+.resumo-linha dt {
+    color: var(--dourado);
+    font-weight: bold;
+    font-size: 0.72rem;
+}
+
+.resumo-linha dd {
+    color: var(--texto-suave);
+}
+
+.aviso {
+    margin-top: 18px;
+    background-color: var(--bege);
+    border-left: 4px solid var(--dourado);
+    padding: 14px 16px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+/* ===== CONFIRMACAO DO AGENDAMENTO ===== */
+.confirmacao-fundo {
+    background-color: var(--cinza-claro);
+    padding: 50px 20px 80px;
+}
+
+.confirmacao {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 24px 30px 28px;
+    text-align: center;
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.icone-ok {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dourado);
+    color: var(--branco);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.confirmacao h1 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.confirmacao p {
+    margin-bottom: 18px;
+    color: var(--texto-suave);
+    font-size: 0.78rem;
+}
+
+.confirmacao .botao-primario {
+    padding: 9px 26px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+/* ===== CONTATO ===== */
+.contato-layout {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 40px 40px;
+    align-items: stretch;
+}
+
+.mapa {
+    border: 1px solid var(--borda);
+    background-color: var(--cinza-claro);
+    min-height: 360px;
+}
+
+.mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    border: 0;
+}
+
+.mapa-vazio {
+    height: 100%;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinza);
+    font-size: 0.8rem;
+}
+
+.contato-card {
+    border: 1px solid var(--borda);
+    padding: 12px 16px 18px;
+}
+
+.contato-card h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.contato-card h2::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    background-color: var(--dourado);
+    margin-top: 5px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.contato-icone {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    background-color: var(--escuro);
+    border-radius: 4px;
+}
+
+.contato-item dt {
+    color: var(--dourado);
+    font-weight: bold;
+    font-size: 0.68rem;
+}
+
+.contato-item dd {
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--borda);
+    min-width: 150px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 860px) {
+    .topo {
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .topo nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cards,
+    .grade-servicos,
+    .sobre-interno,
+    .agendar-layout,
+    .contato-layout,
+    .rodape-interno {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-interno {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner-botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barra-catalogo,
+    .grade-servicos,
+    .agendar-layout,
+    .contato-layout,
+    .destaques,
+    .sobre,
+    .cta-contato,
+    .rodape {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .busca input {
+        width: 100%;
+    }
+
+    .horarios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .linha-data {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .linha-data input {
+        width: 100%;
+    }
+}

@@ -1,0 +1,493 @@
+/* =====================================================
+   MR BARBER - CSS DA AREA ADMINISTRATIVA
+   Usado junto com style.css (variaveis e formularios)
+   ===================================================== */
+
+body.admin {
+    background-color: var(--branco);
+}
+
+/* ===== LOGIN ===== */
+body.login {
+    background-color: var(--banner);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-caixa {
+    width: 100%;
+    max-width: 330px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    padding: 24px 22px 20px;
+    text-align: center;
+}
+
+.login-caixa .logo-simbolo {
+    margin: 0 auto 10px;
+}
+
+.login-caixa h1 {
+    font-size: 0.95rem;
+}
+
+.login-caixa .subtitulo {
+    font-size: 0.72rem;
+    color: var(--texto-suave);
+    margin-bottom: 22px;
+}
+
+.login-caixa form {
+    text-align: left;
+}
+
+.login-caixa .botao-primario {
+    width: 100%;
+    padding: 11px;
+    text-transform: uppercase;
+}
+
+.login-caixa .voltar {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--cinza);
+    font-size: 0.72rem;
+}
+
+.login-caixa .voltar:hover {
+    color: var(--dourado);
+}
+
+/* ===== BARRA SUPERIOR ===== */
+.admin-barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--escuro);
+    color: var(--branco);
+    padding: 0 20px;
+    height: 40px;
+    font-size: 0.78rem;
+}
+
+.admin-barra strong {
+    letter-spacing: 0.3px;
+}
+
+.admin-barra .usuario {
+    color: var(--dourado);
+    font-size: 0.72rem;
+}
+
+.admin-barra .usuario .sep {
+    margin: 0 8px;
+}
+
+.admin-barra .usuario a:hover {
+    text-decoration: underline;
+}
+
+/* ===== LAYOUT COM MENU LATERAL ===== */
+.admin-corpo {
+    display: flex;
+    min-height: calc(100vh - 40px);
+}
+
+.admin-menu {
+    flex: none;
+    width: 165px;
+    background-color: var(--cinza-claro);
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-menu a {
+    padding: 13px 18px;
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    border-left: 3px solid transparent;
+}
+
+.admin-menu a:hover {
+    background-color: #e8e8e8;
+}
+
+.admin-menu a.ativo {
+    background-color: var(--bege);
+    border-left-color: var(--dourado);
+    color: var(--escuro);
+    font-weight: bold;
+}
+
+.admin-principal {
+    flex: 1;
+    min-width: 0;
+    padding: 22px 24px 40px;
+}
+
+.admin-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.admin-topo h1 {
+    font-size: 1.1rem;
+}
+
+.admin-topo .botao-primario {
+    padding: 9px 40px;
+    font-size: 0.72rem;
+}
+
+.admin-busca {
+    max-width: 230px;
+    margin-bottom: 14px;
+}
+
+/* ===== TABELAS ===== */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--borda);
+    font-size: 0.75rem;
+}
+
+.tabela th {
+    background-color: var(--escuro);
+    color: var(--branco);
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+}
+
+.tabela td {
+    padding: 10px 12px;
+    color: var(--texto-suave);
+    border-top: 1px solid var(--borda);
+    vertical-align: middle;
+}
+
+.tabela.zebra-impar tbody tr:nth-child(odd) td,
+.tabela.zebra-par tbody tr:nth-child(even) td {
+    background-color: var(--cinza-claro);
+}
+
+.tabela td.acoes {
+    white-space: nowrap;
+}
+
+.tabela td.acoes form {
+    display: inline;
+}
+
+.btn-mini {
+    display: inline-block;
+    padding: 4px 11px;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: bold;
+    color: var(--branco);
+    cursor: pointer;
+}
+
+.btn-mini:hover {
+    opacity: 0.85;
+}
+
+.btn-ouro {
+    background-color: var(--dourado);
+}
+
+.btn-preto {
+    background-color: var(--escuro);
+}
+
+.rodape-tabela {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.72rem;
+    color: var(--cinza);
+}
+
+.paginacao-admin {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    font-size: 0.78rem;
+}
+
+.paginacao-admin a {
+    color: var(--texto-suave);
+}
+
+.paginacao-admin a:hover {
+    color: var(--dourado);
+}
+
+.paginacao-admin .atual {
+    font-weight: bold;
+}
+
+/* ===== STATUS ===== */
+.status {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+.status.confirmado {
+    background-color: #dcefe0;
+    color: var(--verde);
+}
+
+.status.pendente {
+    background-color: var(--bege);
+    color: var(--dourado);
+}
+
+.status.cancelado {
+    background-color: #f6dede;
+    color: var(--vermelho);
+}
+
+/* ===== FORMULARIO DE SERVICO / CATEGORIA / CONTATO ===== */
+.form-admin {
+    max-width: 780px;
+}
+
+.form-admin .linha {
+    display: flex;
+    gap: 22px;
+}
+
+.form-admin .linha .campo {
+    flex: 1;
+}
+
+.form-admin .linha .campo.estreito {
+    flex: 0 0 190px;
+}
+
+.form-admin textarea {
+    min-height: 120px;
+}
+
+.campo-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    font-size: 0.75rem;
+}
+
+.campo-check input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--dourado);
+}
+
+.campo-check label {
+    margin: 0;
+    font-weight: normal;
+    font-size: 0.75rem;
+}
+
+.form-botoes {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.form-botoes .botao-primario,
+.form-botoes .botao-escuro {
+    padding: 11px 0;
+    width: 150px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+.obrigatorios {
+    margin-left: auto;
+    font-size: 0.68rem;
+    font-style: italic;
+    color: var(--cinza);
+}
+
+.ajuda {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.7rem;
+    color: var(--cinza);
+}
+
+#caixa-validacao {
+    display: none;
+}
+
+#caixa-validacao.visivel {
+    display: block;
+}
+
+/* ===== JANELA DE CONFIRMACAO (EXCLUIR) ===== */
+.modal-fundo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.53);
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.modal-fundo.aberto {
+    display: flex;
+}
+
+.modal {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--branco);
+    border-radius: 8px;
+    padding: 26px 30px 30px;
+    text-align: center;
+}
+
+.modal h2 {
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+.modal p {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+}
+
+.modal .aviso-final {
+    margin-top: 6px;
+    font-style: italic;
+    color: var(--cinza);
+    font-size: 0.75rem;
+}
+
+.modal-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 26px;
+}
+
+.modal-botoes form {
+    display: inline;
+}
+
+.modal-botoes .botao-escuro,
+.modal-botoes .botao-primario {
+    width: 125px;
+    padding: 10px 0;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+}
+
+/* ===== AGENDAMENTOS: FILTROS E CONTADORES ===== */
+.filtros-agenda {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.filtros-agenda input[type="date"] {
+    width: 170px;
+}
+
+.filtros-agenda select {
+    width: 170px;
+}
+
+.filtros-agenda .botao-primario {
+    padding: 9px 30px;
+    font-size: 0.72rem;
+}
+
+.contadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.contador {
+    border: 1px solid var(--borda);
+    padding: 10px 14px;
+    font-size: 0.75rem;
+}
+
+.contador strong {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.contador.pendente strong {
+    color: var(--dourado);
+}
+
+.contador.confirmado strong {
+    color: var(--verde);
+}
+
+.contador.cancelado strong {
+    color: var(--vermelho);
+}
+
+.contador-cat {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+@media (max-width: 860px) {
+    .admin-corpo {
+        flex-direction: column;
+    }
+
+    .admin-menu {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 0;
+    }
+
+    .admin-principal {
+        padding: 18px 14px 30px;
+        overflow-x: auto;
+    }
+
+    .contadores {
+        grid-template-columns: 1fr;
+    }
+
+    .form-admin .linha {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-admin .linha .campo.estreito {
+        flex: 1;
+    }
+}
